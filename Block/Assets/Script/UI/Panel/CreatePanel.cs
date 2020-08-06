@@ -45,13 +45,7 @@ public class CreatePanel : PanelBase
         ProtocolBytes protocol = new ProtocolBytes();
         protocol.AddString("CreatePlayer");
         protocol.AddString(nameInput.text);
-        int start = 0;
-        string protoName = protocol.GetString(start, ref start);
-        Debug.Log(protoName);
-        Debug.Log("start" + start);
-        Debug.Log(sizeof(Int32));
-        string test = protocol.GetString(start, ref start);
-        Debug.Log("发送" + protocol.GetDesc());
+        //Debug.Log("发送" + protocol.GetDesc());
         NetMgr.srvConn.Send(protocol, OnCreateBack);
     }
 
